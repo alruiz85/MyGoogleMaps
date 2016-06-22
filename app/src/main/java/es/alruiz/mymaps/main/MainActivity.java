@@ -3,9 +3,7 @@ package es.alruiz.mymaps.main;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,12 +31,11 @@ public class MainActivity extends BaseActivity implements MainContract.View, OnM
         setContentView(R.layout.activity_main);
         mActionsListener = new MainPresenter(this);
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        if(!checkPlayServices()){
-            //showSnackBar("There is a problem with Google Services", getWindow().getDecorView().getRootView());
+        if (!checkPlayServices()) {
+            showSnackBar("There is a problem with Google Services", getWindow().getDecorView().getRootView());
         }
 
         initmap();
@@ -48,8 +45,7 @@ public class MainActivity extends BaseActivity implements MainContract.View, OnM
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Pending action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                showSnackBar("Pending", getWindow().getDecorView().getRootView());
             }
         });
     }

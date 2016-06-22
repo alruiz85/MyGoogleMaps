@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyMaps</string>
+    <string name="app_commercial_name">My places</string>
     <string name="action_settings">Settings</string>
 </resources>
