@@ -44,7 +44,7 @@ public class MainActivity extends BaseActivity implements MainContract.View, OnM
 
         location = new LocationUtils(this);
         if (!location.canGetLocation()) {
-            location.showSettingsAlert();
+            location.showSettingsAlert(getApplicationContext());
         } else {
             location.getLocation();
         }
